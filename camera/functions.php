@@ -22,7 +22,7 @@
         }
 
         public function fetchdata() {
-            $result = mysqli_query($this->dbcon, "SELECT * FROM tbcamera ORDER BY id_camera ASC");
+            $result = mysqli_query($this->dbcon, "SELECT * FROM tbcamera");
             return $result;
         }
 

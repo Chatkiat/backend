@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="users_pages.php">
+                            <a class="nav-link" href="users/users_pages.php">
                                 <i class="fa-solid fa-user"></i>
                                 <span class="ml-2">Officer</span>
                             </a>
@@ -136,7 +136,7 @@
                         ?>
                                 <h2 class="card-text"><img src="images/cctv_on.png" style="width:60px; height:60px">
                                     <?php echo $data['total']; ?> </h2>
-
+                                
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                         ?>
                                 <h2 class="card-text"><img src="images/camera_of.png" style="width:60px; height:60px">
                                     <?php echo $data['total']; ?></h2>
-
+                               
                             </div>
                         </div>
                     </div>
@@ -158,13 +158,7 @@
 
                 <div class="row">
                     <div class="col-12 col-xl-15 mb-4 mb-lg-0">
-                        
-                        <div>
-                    <button class="btn btn-primary" type="button" data-bs-toggle="modal"
-                        data-bs-target="#addNewCameraModal"><i class="fa-solid fa-square-plus "></i></button>
-                </div>
-                        
-
+                        <a href="insert.php" class="btn btn-success "><i class="fa-solid fa-square-plus "></i></a>
                         <div class="card shadow p-3 mb-5 bg-body rounded">
                             <h5 class="card-header">ข้อมูลกล้องทั้งหมด</h5>
                             <div class="card-body">
@@ -266,8 +260,7 @@
 
 
                                                 <td><?php echo $row['post_date']; ?></td>
-                                                <td><a href="update.php?update=<?php echo $row['status_cm']; ?>"
-                                                        class="btn btn-success"><i
+                                                <td><a href="update.php?update=<?php echo $row['id_camera']; ?>"class="btn btn-success"><i
                                                             class="fa-regular fa-floppy-disk"></i></a></td>
                                                 <td><a href="delete.php?del=<?php echo $row['id_camera']; ?>"
                                                         class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
@@ -279,40 +272,6 @@
                 }
             ?>
                                         </tbody>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" tabindex="-1" id="addNewCameraModal">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-header">Add New Camera</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="add-camera-form" class="p-2" novalidate>
-                                            <div class="row mb-3 gx-3">
-                                                <div class="col">
-                                                    <input type="text" name="status_cm"
-                                                        class="form-control form-control-lg" placeholder="Enter status"
-                                                        required>
-                                                    <div class="invalid-feedback">First name is required!</div>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" name="location_cm"
-                                                        class="form-control form-control-lg"
-                                                        placeholder="Enter Last Name" required>
-                                                    <div class="invalid-feedback">Last name is required!</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <input type="submit" value="Add Camera"
-                                                    class="btn btn-primary btn-block btn-lg" id="add-camera-btn">
-                                            </div>
-                                        </form>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -329,7 +288,9 @@
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-    <script src="main_camera.js"></script>
+
+
+
 </body>
 
 </html>
